@@ -1,0 +1,860 @@
+{
+ "version": 1,
+ "generator": "assay",
+ "generated_at": "2026-09-26T23:58:55Z",
+ "root_hash": "ce8c84f90147ccb2650f91c2ccbdf514999e1731fd37dcd8d7f7d099fe7d8889",
+ "module_depth": 2,
+ "project": {
+  "name": "assay-research",
+  "frameworks": [
+   "fastapi",
+   "pytest"
+  ],
+  "commands": {
+   "python": {
+    "test": "pytest"
+   },
+   "*": {
+    "test": "make test"
+   }
+  },
+  "test_commands": {
+   "python": "pytest",
+   "*": "make test"
+  },
+  "test_command": "pytest",
+  "languages": {
+   "python": 31
+  },
+  "files": 31,
+  "lines": 4668,
+  "modules": 5
+ },
+ "hints": {
+  "test_command": "pytest",
+  "test_commands": {
+   "python": "pytest",
+   "*": "make test"
+  },
+  "most_depended": [
+   "src/assay",
+   "experiments",
+   "paper",
+   "scripts",
+   "tests"
+  ],
+  "hottest_90d": [],
+  "external_top": [
+   "os",
+   "json",
+   "typing",
+   "time",
+   "common",
+   "subprocess",
+   "sys",
+   "re",
+   "hashlib",
+   "conftest",
+   "tempfile",
+   "pytest"
+  ],
+  "read_first": "Read assay.json (or `assay brief`) before opening source files. Bind every claim with `assay attest`."
+ },
+ "modules": {
+  "experiments": {
+   "hash": "7904d6a56e980beff90faa8c7e4f2bdab7e232c64fae8018fd744bc45bd44ae3",
+   "cone_hash": "4c1b573e0a882703f06756581694c44f5ee4b21a6b650e8eb8698cf6d7ca3a0e",
+   "purpose": "Shared helpers for the Assay experiments: corpora discovery, styling, output paths.",
+   "files": [
+    "experiments/common.py",
+    "experiments/exp1_tokens.py",
+    "experiments/exp2_incremental.py",
+    "experiments/exp3_staleness.py",
+    "experiments/exp4_gate.py",
+    "experiments/exp5_blast.py",
+    "experiments/figures_concept.py",
+    "experiments/run_all.py"
+   ],
+   "lines": 1052,
+   "languages": {
+    "python": 8
+   },
+   "exports": [
+    "corpora()",
+    "style()",
+    "save_fig()",
+    "save_json()",
+    "load_json()",
+    "fresh_index()",
+    "measure()",
+    "plot()",
+    "main()",
+    "timed()",
+    "measure()",
+    "plot()",
+    "main()",
+    "measure()",
+    "plot()",
+    "main()",
+    "make_repo()",
+    "write()",
+    "reindex()",
+    "edit_util_ok()",
+    "edit_util_broken()",
+    "edit_core_ok()",
+    "honest_evidence()",
+    "scenario_honest_leaf()",
+    "scenario_honest_hub()",
+    "+26 more"
+   ],
+   "depends_on": [
+    "src/assay"
+   ],
+   "depended_by": [],
+   "activity": {
+    "commits_90d": 0,
+    "level": "low"
+   },
+   "risk": 0.0
+  },
+  "paper": {
+   "hash": "9441325bd5cd4a7017ff7be818961b87c1bab706259b1af33d9239e697f283f6",
+   "cone_hash": "11208ea415facd602898481db83cefb2b77723f041ad2126c3e5a0990cea22f3",
+   "purpose": "Turn experiments/results/*.json into LaTeX macros and tables so that every number in the",
+   "files": [
+    "paper/make_numbers.py"
+   ],
+   "lines": 195,
+   "languages": {
+    "python": 1
+   },
+   "exports": [
+    "load()",
+    "camel()",
+    "roman()",
+    "fmt_int()",
+    "fmt_pct()",
+    "fmt_ms()",
+    "macro()",
+    "write_table()",
+    "count_lines()",
+    "count_tests()"
+   ],
+   "depends_on": [],
+   "depended_by": [],
+   "activity": {
+    "commits_90d": 0,
+    "level": "low"
+   },
+   "risk": 0.0
+  },
+  "scripts": {
+   "hash": "b9352734f4e16ff48f73f34ceacf669b7ac31614ec4e1daf62765929dec92633",
+   "cone_hash": "a832c7427732b1363163d748d8d4022be733d87cc6c82b6f766a7be48e5f46c6",
+   "purpose": "Fail if any prose, code, or bibliography file contains an em-dash, an en-dash, or a",
+   "files": [
+    "scripts/check_dashes.py"
+   ],
+   "lines": 41,
+   "languages": {
+    "python": 1
+   },
+   "exports": [
+    "main()"
+   ],
+   "depends_on": [],
+   "depended_by": [],
+   "activity": {
+    "commits_90d": 0,
+    "level": "low"
+   },
+   "risk": 0.0
+  },
+  "src/assay": {
+   "hash": "d480a3ce83e4d50d643efa48dc9a59705533f458e48567676c58adaca4d6d408",
+   "cone_hash": "8a7e0bba7ec75c9806a1aec07ef3c29841ae7e927777edb6fb774d93680f205c",
+   "purpose": "Assay: content-addressed evidence graphs for accountable AI-assisted software delivery.",
+   "files": [
+    "src/assay/__init__.py",
+    "src/assay/__main__.py",
+    "src/assay/brief.py",
+    "src/assay/cli.py",
+    "src/assay/gate.py",
+    "src/assay/graph.py",
+    "src/assay/hooks.py",
+    "src/assay/index.py",
+    "src/assay/ledger.py",
+    "src/assay/mcp.py",
+    "src/assay/obligation.py",
+    "src/assay/parsers.py",
+    "src/assay/protocol.py",
+    "src/assay/store.py",
+    "src/assay/tokens.py"
+   ],
+   "lines": 2728,
+   "languages": {
+    "python": 15
+   },
+   "exports": [
+    "commands_line()",
+    "make_brief()",
+    "cmd_init()",
+    "cmd_index()",
+    "cmd_brief()",
+    "cmd_modules()",
+    "cmd_module()",
+    "cmd_find()",
+    "cmd_blast()",
+    "cmd_obligation()",
+    "cmd_attest()",
+    "cmd_claims()",
+    "cmd_claim()",
+    "cmd_review()",
+    "cmd_respond()",
+    "cmd_gate()",
+    "cmd_verify()",
+    "cmd_diff()",
+    "cmd_export()",
+    "cmd_hook()",
+    "cmd_setup()",
+    "cmd_mcp()",
+    "cmd_run()",
+    "build_parser()",
+    "main()",
+    "+45 more"
+   ],
+   "depends_on": [],
+   "depended_by": [
+    "experiments",
+    "tests"
+   ],
+   "activity": {
+    "commits_90d": 0,
+    "level": "low"
+   },
+   "risk": 0.1
+  },
+  "tests": {
+   "hash": "1654803ae0e2e74dc47fe45e986cd34351a7bc5b809a8559e4c9a4e3c217bfa4",
+   "cone_hash": "c99b07bd5958bf0bffb84d76eefe87d7786d7305a4f8530098e9df58148ba38c",
+   "purpose": "Per-language evidence commands and the no-runner fallback obligation.",
+   "files": [
+    "tests/conftest.py",
+    "tests/test_cli_mcp.py",
+    "tests/test_index_graph.py",
+    "tests/test_languages.py",
+    "tests/test_monotonicity.py",
+    "tests/test_protocol_gate.py"
+   ],
+   "lines": 652,
+   "languages": {
+    "python": 6
+   },
+   "exports": [
+    "write()",
+    "repo()",
+    "run()",
+    "test_cli_flow()",
+    "test_mcp_server()",
+    "test_index_modules_and_edges()",
+    "test_merkle_cache_skips_unchanged_files()",
+    "test_cone_hash_propagates_only_upward()",
+    "test_blast_radius_equals_cone_change_frontier()",
+    "test_scc_handles_cycles()",
+    "test_modules_for_files()",
+    "test_js_go_rust_parsing()",
+    "mixed()",
+    "test_commands_are_detected_per_language()",
+    "test_lockfile_selects_package_manager()",
+    "test_no_runner_obligation_is_satisfiable()",
+    "test_gate_passes_on_typescript_module_with_build_and_typecheck()",
+    "test_runner_must_match_subject_language()",
+    "test_policy_overrides_and_survives_reindex()",
+    "test_brief_and_agents_snippet_list_commands_per_language()",
+    "test_deleting_tests_is_flagged_until_human_signs_off()",
+    "setup()",
+    "test_attest_binds_cone_hashes_and_runs_evidence()",
+    "test_failed_evidence_is_recorded_not_hidden()",
+    "test_separation_of_duties()",
+    "+10 more"
+   ],
+   "depends_on": [
+    "src/assay"
+   ],
+   "depended_by": [],
+   "activity": {
+    "commits_90d": 0,
+    "level": "low"
+   },
+   "risk": 0.0
+  }
+ },
+ "files": {
+  "experiments/common.py": {
+   "hash": "933b29c413a83dfb",
+   "module": "experiments",
+   "lang": "python",
+   "lines": 106,
+   "imports": [
+    "src/assay/index.py"
+   ],
+   "exports": [
+    "corpora()",
+    "style()",
+    "save_fig()",
+    "save_json()",
+    "load_json()",
+    "fresh_index()"
+   ]
+  },
+  "experiments/exp1_tokens.py": {
+   "hash": "fd53d321f187929d",
+   "module": "experiments",
+   "lang": "python",
+   "lines": 98,
+   "imports": [
+    "src/assay/brief.py",
+    "src/assay/tokens.py"
+   ],
+   "exports": [
+    "measure()",
+    "plot()",
+    "main()"
+   ]
+  },
+  "experiments/exp2_incremental.py": {
+   "hash": "79a0fbd1a2d664da",
+   "module": "experiments",
+   "lang": "python",
+   "lines": 100,
+   "imports": [
+    "src/assay/index.py",
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "timed()",
+    "measure()",
+    "plot()",
+    "main()"
+   ]
+  },
+  "experiments/exp3_staleness.py": {
+   "hash": "cfbd3aeaf912c705",
+   "module": "experiments",
+   "lang": "python",
+   "lines": 96,
+   "imports": [
+    "src/assay/graph.py"
+   ],
+   "exports": [
+    "measure()",
+    "plot()",
+    "main()"
+   ]
+  },
+  "experiments/exp4_gate.py": {
+   "hash": "407d187918947608",
+   "module": "experiments",
+   "lang": "python",
+   "lines": 341,
+   "imports": [
+    "src/assay/gate.py",
+    "src/assay/index.py",
+    "src/assay/ledger.py",
+    "src/assay/obligation.py",
+    "src/assay/protocol.py",
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "make_repo()",
+    "write()",
+    "reindex()",
+    "edit_util_ok()",
+    "edit_util_broken()",
+    "edit_core_ok()",
+    "honest_evidence()",
+    "scenario_honest_leaf()",
+    "scenario_honest_hub()",
+    "scenario_no_evidence()",
+    "scenario_partial_coverage()",
+    "scenario_stale_evidence()",
+    "scenario_self_approval()",
+    "scenario_forged_ledger()",
+    "scenario_broken_code()",
+    "scenario_fake_runner()",
+    "scenario_delete_failing_test()",
+    "scenario_reviewer_refutes()",
+    "scenario_escalation_human()",
+    "infer_mechanisms()",
+    "plot()",
+    "main()"
+   ]
+  },
+  "experiments/exp5_blast.py": {
+   "hash": "98dcbd96c5de3219",
+   "module": "experiments",
+   "lang": "python",
+   "lines": 92,
+   "imports": [
+    "src/assay/graph.py",
+    "src/assay/obligation.py"
+   ],
+   "exports": [
+    "measure()",
+    "plot()",
+    "main()"
+   ]
+  },
+  "experiments/figures_concept.py": {
+   "hash": "0f6c95507bb26bd2",
+   "module": "experiments",
+   "lang": "python",
+   "lines": 179,
+   "imports": [
+    "src/assay/obligation.py"
+   ],
+   "exports": [
+    "box()",
+    "arrow()",
+    "lab()",
+    "fig_lineages()",
+    "fig_cone()",
+    "fig_lifecycle()",
+    "fig_policy()",
+    "fig_architecture()",
+    "main()"
+   ]
+  },
+  "experiments/run_all.py": {
+   "hash": "8875373d112ed312",
+   "module": "experiments",
+   "lang": "python",
+   "lines": 40,
+   "imports": [],
+   "exports": [
+    "main()"
+   ]
+  },
+  "paper/make_numbers.py": {
+   "hash": "8d8036444c982b6d",
+   "module": "paper",
+   "lang": "python",
+   "lines": 195,
+   "imports": [],
+   "exports": [
+    "load()",
+    "camel()",
+    "roman()",
+    "fmt_int()",
+    "fmt_pct()",
+    "fmt_ms()",
+    "macro()",
+    "write_table()",
+    "count_lines()",
+    "count_tests()"
+   ]
+  },
+  "scripts/check_dashes.py": {
+   "hash": "b57f7bffad306a4d",
+   "module": "scripts",
+   "lang": "python",
+   "lines": 41,
+   "imports": [],
+   "exports": [
+    "main()"
+   ]
+  },
+  "src/assay/__init__.py": {
+   "hash": "75a9fb43370fddc6",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 21,
+   "imports": [
+    "src/assay/brief.py",
+    "src/assay/gate.py",
+    "src/assay/graph.py",
+    "src/assay/index.py",
+    "src/assay/ledger.py",
+    "src/assay/obligation.py"
+   ],
+   "exports": []
+  },
+  "src/assay/__main__.py": {
+   "hash": "307299fda7b77d22",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 4,
+   "imports": [
+    "src/assay/cli.py"
+   ],
+   "exports": []
+  },
+  "src/assay/brief.py": {
+   "hash": "a80fbab3f609bce5",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 128,
+   "imports": [
+    "src/assay/gate.py",
+    "src/assay/graph.py",
+    "src/assay/index.py",
+    "src/assay/ledger.py",
+    "src/assay/obligation.py",
+    "src/assay/store.py",
+    "src/assay/tokens.py"
+   ],
+   "exports": [
+    "commands_line()",
+    "make_brief()"
+   ]
+  },
+  "src/assay/cli.py": {
+   "hash": "273572b4d4ca4262",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 427,
+   "imports": [
+    "src/assay/__init__.py",
+    "src/assay/brief.py",
+    "src/assay/gate.py",
+    "src/assay/graph.py",
+    "src/assay/hooks.py",
+    "src/assay/index.py",
+    "src/assay/ledger.py",
+    "src/assay/mcp.py",
+    "src/assay/obligation.py",
+    "src/assay/protocol.py",
+    "src/assay/store.py",
+    "src/assay/tokens.py"
+   ],
+   "exports": [
+    "cmd_init()",
+    "cmd_index()",
+    "cmd_brief()",
+    "cmd_modules()",
+    "cmd_module()",
+    "cmd_find()",
+    "cmd_blast()",
+    "cmd_obligation()",
+    "cmd_attest()",
+    "cmd_claims()",
+    "cmd_claim()",
+    "cmd_review()",
+    "cmd_respond()",
+    "cmd_gate()",
+    "cmd_verify()",
+    "cmd_diff()",
+    "cmd_export()",
+    "cmd_hook()",
+    "cmd_setup()",
+    "cmd_mcp()",
+    "cmd_run()",
+    "build_parser()",
+    "main()"
+   ]
+  },
+  "src/assay/gate.py": {
+   "hash": "c42c3f97f4fc9272",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 178,
+   "imports": [
+    "src/assay/graph.py",
+    "src/assay/index.py",
+    "src/assay/ledger.py",
+    "src/assay/obligation.py",
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "changed_files_from_git()",
+    "default_base()",
+    "evidence_is_weak()",
+    "evaluate_gate()"
+   ]
+  },
+  "src/assay/graph.py": {
+   "hash": "0bac566d1eca476f",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 130,
+   "imports": [],
+   "exports": [
+    "sha256_hex()",
+    "Graph"
+   ]
+  },
+  "src/assay/hooks.py": {
+   "hash": "9d297cdfd965fd1e",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 87,
+   "imports": [
+    "src/assay/index.py"
+   ],
+   "exports": [
+    "commands_block()",
+    "install_pre_commit()",
+    "write_agent_snippet()"
+   ]
+  },
+  "src/assay/index.py": {
+   "hash": "b4b4ee8e8f5b8d0c",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 667,
+   "imports": [
+    "src/assay/graph.py",
+    "src/assay/parsers.py",
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "list_source_files()",
+    "module_of()",
+    "ProjectContext",
+    "resolve_imports()",
+    "git_activity()",
+    "detect_commands()",
+    "detect_project()",
+    "primary_test_command()",
+    "module_lang()",
+    "commands_for_lang()",
+    "commands_for()",
+    "test_command_for()",
+    "build_index()",
+    "diff_index()",
+    "modules_for_files()"
+   ]
+  },
+  "src/assay/ledger.py": {
+   "hash": "b489dfab277e3111",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 271,
+   "imports": [
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "ProtocolError",
+    "now_iso()",
+    "canonical()",
+    "sign()",
+    "binding_for()",
+    "Ledger"
+   ]
+  },
+  "src/assay/mcp.py": {
+   "hash": "4945eb2a27be983e",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 149,
+   "imports": [
+    "src/assay/__init__.py",
+    "src/assay/brief.py",
+    "src/assay/gate.py",
+    "src/assay/graph.py",
+    "src/assay/index.py",
+    "src/assay/ledger.py",
+    "src/assay/obligation.py",
+    "src/assay/protocol.py",
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "Server",
+    "serve()"
+   ]
+  },
+  "src/assay/obligation.py": {
+   "hash": "51f80bd2a2064453",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 122,
+   "imports": [
+    "src/assay/graph.py",
+    "src/assay/index.py"
+   ],
+   "exports": [
+    "effective_policy()",
+    "obligation_level()",
+    "evidence_obligation()"
+   ]
+  },
+  "src/assay/parsers.py": {
+   "hash": "8815513e04cddeea",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 272,
+   "imports": [],
+   "exports": [
+    "FileInfo",
+    "detect_lang()",
+    "parse_file()"
+   ]
+  },
+  "src/assay/protocol.py": {
+   "hash": "7c78af0e9857c6b6",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 138,
+   "imports": [
+    "src/assay/ledger.py",
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "run_evidence()",
+    "attest()",
+    "review()",
+    "respond()"
+   ]
+  },
+  "src/assay/store.py": {
+   "hash": "573aae8a5e89eeff",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 102,
+   "imports": [],
+   "exports": [
+    "Store"
+   ]
+  },
+  "src/assay/tokens.py": {
+   "hash": "6b29410df107d16a",
+   "module": "src/assay",
+   "lang": "python",
+   "lines": 32,
+   "imports": [],
+   "exports": [
+    "estimator_name()",
+    "estimate_tokens()"
+   ]
+  },
+  "tests/conftest.py": {
+   "hash": "82a35a009be458e5",
+   "module": "tests",
+   "lang": "python",
+   "lines": 43,
+   "imports": [],
+   "exports": [
+    "write()",
+    "repo()"
+   ]
+  },
+  "tests/test_cli_mcp.py": {
+   "hash": "727df947fd9a8b5a",
+   "module": "tests",
+   "lang": "python",
+   "lines": 87,
+   "imports": [
+    "src/assay/cli.py",
+    "src/assay/mcp.py"
+   ],
+   "exports": [
+    "run()",
+    "test_cli_flow()",
+    "test_mcp_server()"
+   ]
+  },
+  "tests/test_index_graph.py": {
+   "hash": "2cd8c1f8a59f1ae0",
+   "module": "tests",
+   "lang": "python",
+   "lines": 99,
+   "imports": [
+    "src/assay/graph.py",
+    "src/assay/index.py",
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "test_index_modules_and_edges()",
+    "test_merkle_cache_skips_unchanged_files()",
+    "test_cone_hash_propagates_only_upward()",
+    "test_blast_radius_equals_cone_change_frontier()",
+    "test_scc_handles_cycles()",
+    "test_modules_for_files()",
+    "test_js_go_rust_parsing()"
+   ]
+  },
+  "tests/test_languages.py": {
+   "hash": "5f961f4bbfd9ea72",
+   "module": "tests",
+   "lang": "python",
+   "lines": 162,
+   "imports": [
+    "src/assay/brief.py",
+    "src/assay/gate.py",
+    "src/assay/hooks.py",
+    "src/assay/index.py",
+    "src/assay/ledger.py",
+    "src/assay/obligation.py",
+    "src/assay/protocol.py",
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "mixed()",
+    "test_commands_are_detected_per_language()",
+    "test_lockfile_selects_package_manager()",
+    "test_no_runner_obligation_is_satisfiable()",
+    "test_gate_passes_on_typescript_module_with_build_and_typecheck()",
+    "test_runner_must_match_subject_language()",
+    "test_policy_overrides_and_survives_reindex()",
+    "test_brief_and_agents_snippet_list_commands_per_language()"
+   ]
+  },
+  "tests/test_monotonicity.py": {
+   "hash": "f55fa8375306ba95",
+   "module": "tests",
+   "lang": "python",
+   "lines": 45,
+   "imports": [
+    "src/assay/gate.py",
+    "src/assay/index.py",
+    "src/assay/protocol.py",
+    "src/assay/store.py"
+   ],
+   "exports": [
+    "test_deleting_tests_is_flagged_until_human_signs_off()"
+   ]
+  },
+  "tests/test_protocol_gate.py": {
+   "hash": "df0cac33420b577a",
+   "module": "tests",
+   "lang": "python",
+   "lines": 216,
+   "imports": [
+    "src/assay/brief.py",
+    "src/assay/gate.py",
+    "src/assay/index.py",
+    "src/assay/ledger.py",
+    "src/assay/obligation.py",
+    "src/assay/protocol.py",
+    "src/assay/store.py",
+    "src/assay/tokens.py"
+   ],
+   "exports": [
+    "setup()",
+    "test_attest_binds_cone_hashes_and_runs_evidence()",
+    "test_failed_evidence_is_recorded_not_hidden()",
+    "test_separation_of_duties()",
+    "test_stale_claim_cannot_be_accepted_and_upstream_change_stales_dependents()",
+    "test_counter_contest_rounds_and_escalation()",
+    "test_accept_finding_supersedes()",
+    "test_refute_is_terminal()",
+    "test_ledger_tamper_detected()",
+    "test_obligation_levels()",
+    "test_gate_end_to_end()",
+    "test_weak_evidence_flagged()",
+    "test_brief_respects_budget_and_reports_state()",
+    "test_human_approved_without_command()"
+   ]
+  }
+ },
+ "edges": [
+  [
+   "experiments",
+   "src/assay"
+  ],
+  [
+   "tests",
+   "src/assay"
+  ]
+ ]
+}

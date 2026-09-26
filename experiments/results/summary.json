@@ -1,0 +1,12 @@
+{
+ "finished_at": "2026-09-24T06:43:34Z",
+ "elapsed_s": 17.7,
+ "corpora": [
+  "express",
+  "flask",
+  "gin",
+  "axum",
+  "fastapi",
+  "assay"
+ ]
+}

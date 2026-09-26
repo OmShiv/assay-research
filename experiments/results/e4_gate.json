@@ -1,0 +1,332 @@
+{
+ "mechanisms": [
+  "coverage",
+  "freshness",
+  "signature",
+  "separation",
+  "exit code",
+  "plausibility",
+  "monotonicity",
+  "review"
+ ],
+ "results": [
+  {
+   "scenario": "honest leaf edit (L1): tests on the radius, independent accept",
+   "passed": true,
+   "expected_pass": true,
+   "mechanisms": [],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "ok",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "ok",
+     "note": ""
+    }
+   ],
+   "tampered": [],
+   "level": "standard"
+  },
+  {
+   "scenario": "honest hub edit (L3): + lint, secrets scan, human sign-off",
+   "passed": true,
+   "expected_pass": true,
+   "mechanisms": [],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/app",
+     "status": "ok",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/core",
+     "status": "ok",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/service",
+     "status": "ok",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "ok",
+     "note": ""
+    },
+    {
+     "predicate": "lint-clean",
+     "subject": "pkg/core",
+     "status": "ok",
+     "note": ""
+    },
+    {
+     "predicate": "no-secrets",
+     "subject": "pkg/core",
+     "status": "ok",
+     "note": ""
+    },
+    {
+     "predicate": "human-approved",
+     "subject": "pkg/core",
+     "status": "ok",
+     "note": ""
+    }
+   ],
+   "tampered": [],
+   "level": "escalate"
+  },
+  {
+   "scenario": "no evidence at all",
+   "passed": false,
+   "expected_pass": false,
+   "mechanisms": [
+    "coverage"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "missing",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "missing",
+     "note": ""
+    }
+   ],
+   "tampered": [],
+   "level": "standard"
+  },
+  {
+   "scenario": "evidence covers the edited module, not its dependents",
+   "passed": false,
+   "expected_pass": false,
+   "mechanisms": [
+    "coverage"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "ok",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "missing",
+     "note": ""
+    }
+   ],
+   "tampered": [],
+   "level": "standard"
+  },
+  {
+   "scenario": "evidence produced before the edit (stale)",
+   "passed": false,
+   "expected_pass": false,
+   "mechanisms": [
+    "freshness"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "stale",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "stale",
+     "note": ""
+    }
+   ],
+   "tampered": [],
+   "level": "standard"
+  },
+  {
+   "scenario": "doer approves own claim",
+   "passed": false,
+   "expected_pass": false,
+   "mechanisms": [
+    "separation"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "unreviewed",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "unreviewed",
+     "note": ""
+    }
+   ],
+   "tampered": [],
+   "level": "standard"
+  },
+  {
+   "scenario": "forged ledger entries (claim + verdict)",
+   "passed": false,
+   "expected_pass": false,
+   "mechanisms": [
+    "signature"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "missing",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "missing",
+     "note": ""
+    }
+   ],
+   "tampered": [
+    "c-0001",
+    "v-0001"
+   ],
+   "level": "standard"
+  },
+  {
+   "scenario": "code broken, real test run recorded",
+   "passed": false,
+   "expected_pass": false,
+   "mechanisms": [
+    "exit code"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "failed",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "failed",
+     "note": ""
+    }
+   ],
+   "tampered": [],
+   "level": "standard"
+  },
+  {
+   "scenario": "code broken, fake test command",
+   "passed": false,
+   "expected_pass": false,
+   "mechanisms": [
+    "plausibility"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "weak",
+     "note": "command does not look like a test runner"
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "weak",
+     "note": "command does not look like a test runner"
+    }
+   ],
+   "tampered": [],
+   "level": "standard"
+  },
+  {
+   "scenario": "code broken, failing test deleted",
+   "passed": false,
+   "expected_pass": false,
+   "mechanisms": [
+    "monotonicity"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "weak",
+     "note": "test count dropped from 4 to 2; needs human-approved on the subject"
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "weak",
+     "note": "test count dropped from 4 to 2; needs human-approved on the subject"
+    }
+   ],
+   "tampered": [],
+   "level": "standard"
+  },
+  {
+   "scenario": "reviewer refutes the claim",
+   "passed": false,
+   "expected_pass": false,
+   "mechanisms": [
+    "review"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "refuted",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "refuted",
+     "note": ""
+    }
+   ],
+   "tampered": [],
+   "level": "standard"
+  },
+  {
+   "scenario": "three rounds, escalated, human resolves",
+   "passed": true,
+   "expected_pass": true,
+   "mechanisms": [
+    "review"
+   ],
+   "rows": [
+    {
+     "predicate": "tests-pass",
+     "subject": "pkg/util",
+     "status": "ok",
+     "note": ""
+    },
+    {
+     "predicate": "tests-pass",
+     "subject": "tests",
+     "status": "ok",
+     "note": ""
+    }
+   ],
+   "tampered": [],
+   "level": "standard",
+   "blocked_while_escalated": true
+  }
+ ]
+}

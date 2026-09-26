@@ -1,0 +1,82 @@
+{
+ "rows": [
+  {
+   "corpus": "express",
+   "files": 141,
+   "modules": 35,
+   "edges": 27,
+   "cold_s": 0.0452,
+   "warm_noop_s": 0.0242,
+   "warm_1file_s": 0.024,
+   "warm_reparsed": 0,
+   "touch_reparsed": 1,
+   "speedup_noop": 1.9,
+   "speedup_1file": 1.9
+  },
+  {
+   "corpus": "flask",
+   "files": 83,
+   "modules": 16,
+   "edges": 18,
+   "cold_s": 0.094,
+   "warm_noop_s": 0.0232,
+   "warm_1file_s": 0.0317,
+   "warm_reparsed": 0,
+   "touch_reparsed": 1,
+   "speedup_noop": 4.1,
+   "speedup_1file": 3.0
+  },
+  {
+   "corpus": "gin",
+   "files": 98,
+   "modules": 7,
+   "edges": 12,
+   "cold_s": 0.0347,
+   "warm_noop_s": 0.02,
+   "warm_1file_s": 0.0205,
+   "warm_reparsed": 0,
+   "touch_reparsed": 1,
+   "speedup_noop": 1.7,
+   "speedup_1file": 1.7
+  },
+  {
+   "corpus": "axum",
+   "files": 305,
+   "modules": 90,
+   "edges": 157,
+   "cold_s": 0.0621,
+   "warm_noop_s": 0.0339,
+   "warm_1file_s": 0.0383,
+   "warm_reparsed": 0,
+   "touch_reparsed": 1,
+   "speedup_noop": 1.8,
+   "speedup_1file": 1.6
+  },
+  {
+   "corpus": "fastapi",
+   "files": 1142,
+   "modules": 195,
+   "edges": 274,
+   "cold_s": 0.5077,
+   "warm_noop_s": 0.0933,
+   "warm_1file_s": 0.1061,
+   "warm_reparsed": 0,
+   "touch_reparsed": 1,
+   "speedup_noop": 5.4,
+   "speedup_1file": 4.8
+  },
+  {
+   "corpus": "assay",
+   "files": 31,
+   "modules": 5,
+   "edges": 2,
+   "cold_s": 0.0565,
+   "warm_noop_s": 0.0225,
+   "warm_1file_s": 0.0307,
+   "warm_reparsed": 0,
+   "touch_reparsed": 1,
+   "speedup_noop": 2.5,
+   "speedup_1file": 1.8
+  }
+ ]
+}

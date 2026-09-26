@@ -1,0 +1,13 @@
+# Assay brief: fastapi @ d5aba4195b | 195 modules, 1142 files, 113579 lines | python 1138, javascript 4
+Commands: python: test pytest, typecheck mypy .; javascript: no test runner | Frameworks: fastapi, flask, pytest
+Hubs (touch carefully): fastapi (fan-in 171, risk 1.00); tests (fan-in 41, risk 0.95); fastapi/openapi (fan-in 6, risk ..
+Hot 90d: fastapi (38 commits); tests (18 commits); scripts (8 commits); fastapi/dependencies (7 commits); fastapi/open ..
+Changed: fastapi -> blast radius 177/195 modules (91%), max risk 1.00 -> level 3 (escalate)
+Dependents in radius: docs_src/additional_responses, docs_src/additional_status_codes, docs_src/advanced_middleware, d ..
+Required evidence: tests-pass[docs_src/additional_responses, docs_src/additional_status_codes, docs_src/advanced_middl ..
+Review: independent reviewer, adversarial, human sign-off, max 3 rounds
+Modules (by fan-in):
+- fastapi: FastAPI framework, high performance, easy to learn, fast to code, read | exports: FastAPI, BackgroundTasks, ..
+- docs_src/additional_responses: additional_responses | exports: Item, Message, read_item(), Item, read_item(), Item,  ..
+- docs_src/additional_status_codes: additional_status_codes | exports: upsert_item(), upsert_item() | deps: fastapi |  ..
+- .. 192 more modules: `assay module <path>` or the MCP tool get_module

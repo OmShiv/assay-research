@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use Assay, please cite the paper."
+title: "Assay: Claims That Decay With the Code"
+authors:
+  - family-names: Tiwari
+    given-names: Om Shankar
+    affiliation: "Applied AI, Google"
+  - family-names: Vass
+    given-names: Tangi
+    affiliation: "Universite de Bretagne Occidentale, France"
+  - family-names: Shukla
+    given-names: Navnit
+    affiliation: "Snowflake Inc."
+license: Apache-2.0
+repository-code: "https://github.com/OmShiv/assay-research"
+preferred-citation:
+  type: article
+  title: "Assay: Claims That Decay With the Code. Content-Addressed Evidence Graphs for Accountable AI-Assisted Software Delivery"
+  authors:
+    - family-names: Tiwari
+      given-names: Om Shankar
+    - family-names: Vass
+      given-names: Tangi
+    - family-names: Shukla
+      given-names: Navnit
+  year: 2026
+  journal: "arXiv preprint"
+  notes: "arXiv identifier to be added on publication"

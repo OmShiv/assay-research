@@ -1,0 +1,18 @@
+\begin{tabular}{p{7.2cm}lp{4.6cm}}
+\toprule
+Scenario & Gate & Mechanisms that fired \\
+\midrule
+honest leaf edit (L1): tests on the radius, independent accept & PASS & none \\
+honest hub edit (L3): + lint, secrets scan, human sign-off & PASS & none \\
+no evidence at all & FAIL & coverage \\
+evidence covers the edited module, not its dependents & FAIL & coverage \\
+evidence produced before the edit (stale) & FAIL & freshness \\
+doer approves own claim & FAIL & separation \\
+forged ledger entries (claim + verdict) & FAIL & signature \\
+code broken, real test run recorded & FAIL & exit code \\
+code broken, fake test command & FAIL & plausibility \\
+code broken, failing test deleted & FAIL & monotonicity \\
+reviewer refutes the claim & FAIL & review \\
+three rounds, escalated, human resolves & PASS & review \\
+\bottomrule
+\end{tabular}
