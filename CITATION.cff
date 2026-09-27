@@ -4,13 +4,16 @@ title: "Assay: Claims That Decay With the Code"
 authors:
   - family-names: Tiwari
     given-names: Om Shankar
-    affiliation: "Applied AI, Google"
+    affiliation: "Applied AI, Google, California, United States"
+    orcid: "https://orcid.org/0009-0001-2247-0383"
   - family-names: Vass
     given-names: Tangi
-    affiliation: "Universite de Bretagne Occidentale, France"
-  - family-names: Shukla
-    given-names: Navnit
-    affiliation: "Snowflake Inc."
+    affiliation: "OMNI3ai, Lyon, France"
+    orcid: "https://orcid.org/0009-0009-0414-6190"
+  - family-names: Singh
+    given-names: Gagan Deep
+    affiliation: "Glinr Studios and theSVG.org, Texas, United States"
+    orcid: "https://orcid.org/0009-0002-0579-6514"
 license: Apache-2.0
 repository-code: "https://github.com/OmShiv/assay-research"
 preferred-citation:
@@ -21,8 +24,8 @@ preferred-citation:
       given-names: Om Shankar
     - family-names: Vass
       given-names: Tangi
-    - family-names: Shukla
-      given-names: Navnit
+    - family-names: Singh
+      given-names: Gagan Deep
   year: 2026
   journal: "arXiv preprint"
   notes: "arXiv identifier to be added on publication"

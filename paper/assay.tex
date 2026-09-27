@@ -89,13 +89,13 @@
 \large Content-Addressed Evidence Graphs for Accountable AI-Assisted Software Delivery}
 
 \author{\IEEEauthorblockN{Om Shankar Tiwari}
-\IEEEauthorblockA{Applied AI\\Google}
+\IEEEauthorblockA{Applied AI Technical Lead, Google\\California, United States\\\url{https://orcid.org/0009-0001-2247-0383}}
 \and
 \IEEEauthorblockN{Tangi Vass}
-\IEEEauthorblockA{Universit\'e de Bretagne Occidentale\\France}
+\IEEEauthorblockA{Co-Founder \& CPTO, OMNI3ai\\Lyon, France\\\url{https://orcid.org/0009-0009-0414-6190}}
 \and
-\IEEEauthorblockN{Navnit Shukla}
-\IEEEauthorblockA{Snowflake Inc.\\USA}}
+\IEEEauthorblockN{Gagan Deep Singh}
+\IEEEauthorblockA{Founder, Glinr Studios and theSVG.org\\Texas, United States\\\url{https://orcid.org/0009-0002-0579-6514}}}
 
 \maketitle
 \setlength{\abovedisplayskip}{4pt plus 1pt}\setlength{\belowdisplayskip}{4pt plus 1pt}
@@ -106,14 +106,14 @@ AI coding agents fail in two coupled ways. They spend most of their context wind
 \end{abstract}
 
 \begin{IEEEkeywords}
-AI coding agents, code provenance, Merkle trees, dependency graphs, code review, software supply chain, Model Context Protocol
+AI coding agents, code provenance, Merkle trees, dependency graphs, code review, software supply chain
 \end{IEEEkeywords}
 
 \section{Introduction}
 
 An agent that edits code has to answer two questions before it can be trusted: where does this change go, and how do we know it worked? Both are questions about the structure of the repository. The first is about the structure now. The second is about the structure at the moment a check ran, and whether it has drifted since.
 
-Current tooling answers them with two disconnected artifacts. Context tools produce maps. Aider's repository map~\citep{aider}, packers such as Repomix~\citep{repomix}, and committed indexes such as Stacklit~\citep{stacklit} compress a repository into a few hundred to a few thousand tokens so an agent stops reading files to learn what they contain. Governance frameworks produce process state: task boards, role assignments, review verdicts. Liza~\citep{liza} is the most disciplined example we know. It pairs every doer with an independent reviewer, makes verdicts binding, and moves the invariants that matter most (no self-approval, no forbidden transitions, no merge without review) out of the prompt and into compiled code, on the grounds that instructions bend under pressure and code does not.
+Current tooling answers them with two disconnected artifacts. Context tools produce maps. Aider's repository map~\citep{aider}, packers such as Repomix~\citep{repomix}, and committed indexes such as Stacklit~\citep{stacklit} compress a repository into a few hundred to a few thousand tokens so an agent stops reading files to learn what they contain. Governance frameworks produce process state. Liza~\citep{liza} is the most disciplined example we know. It pairs every doer with an independent reviewer, makes verdicts binding, and moves the invariants that matter most (no self-approval, no forbidden transitions, no merge without review) out of the prompt and into compiled code, on the grounds that instructions bend under pressure and code does not.
 
 Each lineage stops where the other starts. A map knows that module $A$ depends on module $B$, but not that the tests covering $A$ last ran before $B$ changed. A task board knows a reviewer approved task 17 at commit \texttt{9b3c}, but not which modules the approval is about. A later change to an unrelated module and a change to something $A$ depends on look identical to it: both are ``after the approval''. That forces a bad choice. Either every accepted verdict stays valid until someone notices otherwise, or every change invalidates everything and review starts over.
 
@@ -211,7 +211,7 @@ Proposition~\ref{prop:radius} is the identity that makes the two lineages one. T
 
 \begin{figure}[t]
   \centering
-  \begin{tikzpicture}[x=0.93cm, y=0.9cm]
+  \begin{tikzpicture}[x=0.93cm, y=0.85cm]
     % before
     \node[font=\tiny, text=assaymuted] at (2.05,4.05) {before: two claims, both fresh};
     \node[fresh] (core) at (2.0,0.5) {core};
@@ -258,13 +258,13 @@ Churn approximates instability and fan-in approximates the cost of being wrong. 
 
 \subsection{Roles and lifecycle}
 
-Three roles appear in the ledger: doer, reviewer, and human. Any identity may attest. Only reviewers and humans may issue verdicts, and no identity may issue one on its own claim. That is checked at append time by comparing identities, and it is the invariant Liza calls ``no self-approval'', moved from task to claim granularity. A human attestation is the escalation authority itself and needs no reviewer, though it can still be refuted if its evidence is contradicted.
+Three roles appear in the ledger: doer, reviewer, and human. Any identity may attest. Only reviewers and humans may issue verdicts, and no identity may issue one on its own claim. Checked at append time, this is Liza's ``no self-approval'' invariant moved from task to claim granularity. A human attestation is the escalation authority itself and needs no reviewer, though it can still be refuted if its evidence is contradicted.
 
 Fig.~\ref{fig:lifecycle} shows the derived states. A claim starts \emph{attested}, or \emph{failed} if its evidence exited non-zero. A reviewer may accept it, counter it with a finding, refute it, or escalate it. A countered claim is \emph{contested}, and the attestor must respond before any further verdict, either by accepting the finding and superseding the claim with a stronger one, or by contesting, which requires naming the concrete harm the requested change would cause. Three counters escalate automatically, and only a human verdict resolves an escalation. Refuted and superseded are terminal. Status is never stored. It is derived from the ledger each time it is needed, so the ledger cannot disagree with its own history. Staleness is orthogonal to status and derived from the index: an accepted claim whose bindings drifted is stale, and a stale claim cannot be accepted until re-attested.
 
 \begin{figure}[t]
   \centering
-  \begin{tikzpicture}[x=1cm, y=0.86cm]
+  \begin{tikzpicture}[x=1cm, y=0.8cm]
     \node[state, fill=assayblue!12, draw=assayblue] (att) at (1.0,3.4) {attested};
     \node[state, fill=assayorange!15, draw=assayorange, font=\tiny\bfseries] (con) at (4.25,3.4) {contested\\(up to 3 rounds)};
     \node[state, fill=assaygood!8, draw=assaygood] (acc) at (7.5,3.4) {accepted};
